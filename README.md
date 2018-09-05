@@ -1,4 +1,4 @@
-# Wheeldroid Mongoose OS app
+# Wheeldroid
 
 ## Overview
 
@@ -11,12 +11,3 @@ Wheeldroid is a 3D Printed robot whose brain is based on the ESP32 board. This r
 
 
 This project is intended to learn all possible capabilities to develop a system using the ESP32 as well as the Mongoose OS development platform.
-
-## How to install this app
-
-- Install and start [mos tool](https://mongoose-os.com/software.html)
-- Switch to the Project page, find and import this app, build and flash it:
-
-<p align="center">
-  <img src="https://mongoose-os.com/images/app1.gif" width="75%">
-</p>
