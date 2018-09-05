@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<nav class="nav" tabindex="-1" onclick="this.focus()">
+		<div class="container">
+			<center><a class="pagename current" >WIFI-SETTING</a></center>
+		</div>
+	</nav>
+	<center>
+		<img src="disconnected.png" alt='connect' class='connect' id='connection'>
+		<br>
+		<div class='container'>
+			<div class='hero'>
+				<p id='wifimsg' >WiFi not connected</p>
+				<p id='apmsg' >Access point on</p>
+			</div>
+			<div class="row form">
+				<div class="col c4">
+					<br><select class='input' name='ap' id='ap-dropdown' required></select>
+					<br>
+					<br>
+					<br>
+					<input class='input' type='password' id='password' placeholder='              Password' name='psw' >
+					<br>
+					<br>
+					<button class="btn btn-sm btn-c" id='save'>Save WiFi and connect</button>
+					<br>
+					<br>
+				</div>
+				<div class="col c8">
+					<!-- <h3>Result:</h3> -->
+					<div id="result"></div>
+				</div>
+			</div>
+		</div>
+	</center>
+	<script type="text/javascript" src="zepto.min.js"></script>
+	<script type="text/javascript" src="script.js"></script>
+</body>
+</html>
