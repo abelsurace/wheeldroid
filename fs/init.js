@@ -77,24 +77,32 @@ RPC.addHandler('offled', function() {
 // - `Adafruit_SSD1306.RES_128_32`
 // - `Adafruit_SSD1306.RES_128_64`
 let d = Adafruit_SSD1306.create_spi(16,5,17, Adafruit_SSD1306.RES_128_64);
-// Initialize the display.
-//d.begin(Adafruit_SSD1306.EXTERNALVCC, 0x42, true);
 d.begin(Adafruit_SSD1306.SWITCHCAPVCC,0x42,true);
 d.display();
 let i = 0;
 let on = false;
 
-let showStr = function(d, str) {
-  d.clearDisplay();
-  d.setTextSize(2);
+let showStr = function(str, size, x, y) {
+
+  d.setTextSize(size);
   d.setTextColor(Adafruit_SSD1306.WHITE);
-  d.setCursor(d.width() / 4, d.height() / 4);
+  d.setCursor(x, y);
   d.write(str);
   d.display();
 };
 
+RPC.addHandler('clearScreen', function (){
+   d.clearDisplay();
+});
+
+
+
+RPC.addHandler('textToScreen', function (a){
+ showStr(a.text, a.size, a.x, a.y);
+});
+
 Timer.set(1000 /* milliseconds */, Timer.REPEAT, function() {
-  showStr(d, "i = " + JSON.stringify(i));
+  showStr("i = " + JSON.stringify(i), 2, 32, 16);
   //print("i = ", i);
   i++;
   if (on){
